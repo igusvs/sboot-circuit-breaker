@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 
-@Controller("/magalu")
+@RestController
 public class MagaluController {
 
     private final DelayTracker delayTracker;
@@ -18,7 +18,7 @@ public class MagaluController {
         this.delayTracker = delayTracker;
     }
 
-    @GetMapping("produto")
+    @GetMapping("/magalu/produto")
     public ResponseEntity<ProdutoRecord> obter(){
 
         delayTracker.applyDelay();
